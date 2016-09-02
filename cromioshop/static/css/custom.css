@@ -1,0 +1,17 @@
+#nav-foot {
+  font-weight: 700;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 1.4px;
+  display: inline-flex;
+  list-style: none;
+}
+
+#nav-foot li {
+  margin: 20px;
+}
+
+#btn-w {
+  background-color: white;
+  color: #428bca;
+}
