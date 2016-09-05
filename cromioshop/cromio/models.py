@@ -175,6 +175,15 @@ class Product(ProductBase):
         except IndexError:
             raise self.prices.model.DoesNotExist
 
+    def handle_order_item(self, orderitem):
+        support_slug = orderitem.data.get('support', None)
+        if support_slug:
+            support_item = Support.objects.get(slug=support_slug)
+            orderitem._unit_price += support_item.price
+
+        orderitem.name = unicode(self)
+        orderitem.sku = getattr(self, 'sku', '')
+
 class ProductPrice(PriceBase):
     product = models.ForeignKey(Product, verbose_name=_('product'),
         related_name='prices')
@@ -188,14 +197,4 @@ class ProductPrice(PriceBase):
         verbose_name = _('price')
         verbose_name_plural = _('prices')
 
-    def handle_order_item(self, item):
-        """
-        Set price data on the ``OrderItem`` passed
-        """
-        item._unit_price = self.unit_price_excl_tax
-        #experiment:
-        #item._unit_price += 13
-        item._unit_tax = self.unit_tax
-        item.tax_rate = self.tax_class.rate
-        item.tax_class = self.tax_class
-        item.is_sale = False  # Hardcoded; override in your own price class
+    
