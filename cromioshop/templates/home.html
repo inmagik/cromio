@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block breadcrumbs %}
+<div class="section section-breadcrumbs">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Stampe di alta qualità a prezzi accessibili</h1>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock breadcrumbs %}
+
+
+{% block content %}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+        <img class="img-responsive" src="{% static 'img/photo2.jpg' %}" style="max-width: 100%;" alt="" />
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
