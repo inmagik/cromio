@@ -187,3 +187,15 @@ class ProductPrice(PriceBase):
         ordering = ['-id']
         verbose_name = _('price')
         verbose_name_plural = _('prices')
+
+    def handle_order_item(self, item):
+        """
+        Set price data on the ``OrderItem`` passed
+        """
+        item._unit_price = self.unit_price_excl_tax
+        #experiment:
+        #item._unit_price += 13
+        item._unit_tax = self.unit_tax
+        item.tax_rate = self.tax_class.rate
+        item.tax_class = self.tax_class
+        item.is_sale = False  # Hardcoded; override in your own price class
