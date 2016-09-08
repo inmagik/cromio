@@ -196,5 +196,3 @@ class ProductPrice(PriceBase):
         ordering = ['-id']
         verbose_name = _('price')
         verbose_name_plural = _('prices')
-
-    

@@ -19,7 +19,7 @@ from cromio.models import Product, OrderWithData
 # Create your views here.
 shop = Shop(
     contact_model=Contact,
-    order_model=OrderWithData,
+    order_model=Order,
     discount_model=Discount,
 )
 
@@ -84,7 +84,7 @@ class ProductDetailView(FormView):
         size = form.cleaned_data.get('size')
 
         material = form.cleaned_data.get('material')
-        
+
         try:
             order.modify_item(
                 product,
