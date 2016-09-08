@@ -9,20 +9,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="home.html"><img src="{% static 'img/cromio1.png' %}"  alt="Cromio prints logo"/></a>
+          <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'img/cromio1.png' %}"  alt="Cromio prints logo"/></a>
         </div>
         <div class="collapse navbar-collapse" id="my-navbar">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="home.html">Home</a></li>
+            <li class="active"><a href="{% url 'home' %}">Home</a></li>
             {% for product in menu_products %}
               <li><a href="{% url 'product-detail' product.slug %}"> {{ product.name }} </a></li>
             {% endfor %}
-            <!--<li><a href="acrylic.html">Plexyglass&copy;</a></li>
-            <li><a href="wood.html">Legno</a></li>
-            <li><a href="aluminium.html">Alluminio</a></li>
-            <li><a href="forex.html">Forex</a></li>
-            <li><a href="canvas.html">Tela</a></li>
-            <li><a href="wallpaper.html">Carta da Parati</a></li>-->
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Carrello</a></li>
