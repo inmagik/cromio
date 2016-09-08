@@ -84,8 +84,7 @@ class ProductDetailView(FormView):
         size = form.cleaned_data.get('size')
 
         material = form.cleaned_data.get('material')
-        print "aa", size, material
-
+        
         try:
             order.modify_item(
                 product,
