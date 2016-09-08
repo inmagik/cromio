@@ -130,10 +130,13 @@ class Product(ProductBase):
     name = models.CharField(_('name'), max_length=100)
     slug = models.SlugField(_('slug'), unique=True)
     description = models.TextField(_('description'), blank=True)
+    #TODO: remove: available configurations will be determined from ProductPrice instances
     configurations = models.TextField(_('configurations'), blank=True)
     accessories =  models.TextField(_('accessories'), blank=True)
+    menu_position = models.IntegerField(null=True, blank=True)
+    home_position = models.IntegerField(null=True, blank=True)
 
-
+    #TODO: remove: available configurations will be determined from ProductPrice instances
     def get_config(self):
         lines = self.configurations.split("\r\n")
         lines = [x for x in lines if x]
