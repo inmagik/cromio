@@ -40,8 +40,6 @@ INSTALLED_APPS = [
 
     'debug_toolbar',
 
-
-
     'plata',
     'plata.contact',
     'plata.discount',
