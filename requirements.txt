@@ -1,7 +1,7 @@
 Django==1.9.9
 django-bootstrap3==7.0.1
 django-countries==4.0
-django-debug-toolbar==1.5
+django-debug-toolbar==1.11.1
 et-xmlfile==1.0.1
 jdcal==1.2
 openpyxl==2.3.5
