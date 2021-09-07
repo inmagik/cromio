@@ -6,7 +6,7 @@ et-xmlfile==1.0.1
 jdcal==1.2
 openpyxl==2.3.5
 pdfdocument==3.1
-Pillow==3.3.1
+Pillow==8.3.2
 Plata==1.2.0rc0
 pytz==2016.6.1
 reportlab==3.3.0
