@@ -4,7 +4,7 @@ django-countries==4.0
 django-debug-toolbar==1.5
 et-xmlfile==1.0.1
 jdcal==1.2
-openpyxl==2.3.5
+openpyxl==2.4.2
 pdfdocument==3.1
 Pillow==3.3.1
 Plata==1.2.0rc0
